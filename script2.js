@@ -83,8 +83,9 @@ boutonValider.onclick = function () {
     else {
 
        const foundedDemande = questRep.find(element => element.dmd === demande.value);
+        demande.value ="";
         if(foundedDemande){
-            demande.value ="";
+
             question.textContent = foundedDemande.rps;
         }
 
