@@ -82,17 +82,13 @@ boutonValider.onclick = function () {
     //CLICK
     else {
 
-       for(n;demande.value.toLowerCase() !== questRep[n].dmd && n<questRep.length-1 ;n++){
-           demande.value ="";
-       }
-
-       if(demande.value.toLowerCase() === questRep[n].dmd){
+       const foundedDemande = questRep.find(element => element.dmd === demande.value);
+        if(foundedDemande){
             demande.value ="";
-            question.textContent = questRep[n].rps;
-            n=0;
-            return n;
-       }
-       if(demande.value !== questRep[n].dmd){
+            question.textContent = foundedDemande.rps;
+        }
+
+       else{
 
             apprendre();
 
